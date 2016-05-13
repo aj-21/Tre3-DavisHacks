@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Tre3 DEMO</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="http://www.seedtip.com/images/alpaca.jpg" />
+	<meta property="og:title" content="Discover the closest Farmers Markets in your area!" />
+	<meta property="og:site_title" content="Tre3 Console" />
+	<meta property="og:description" content="Support your local farmers and small business owners. Visit a farmers market."/>
+	<meta property="og:url" content="http://www.seedtip.com"/>
+	
+	<!--[if lt IE 9]>
+		<script src="/js/html5shiv.min.js"></script>
+	<![endif]-->
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key="></script>
+  <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script language="javascript" type="text/javascript" src="js/map2.js"></script>
+	<script language="javascript" type="text/javascript" src="js/search.js"></script>
+  </head>
+  <body>
+  
+	<div id="control">
+		<h2>Welcome to the Tre3 console</h2>
+		<p>We'll help you configure an optimal garbage path or analyze the data.</p>
+		<form method="get" id="chooseZip">
+			<button type="submit" class="learnButton">Use current location</button>
+			<button type="button" id="searchZip" class="learnButton">Search by Zip Code</button>
+			<div class="clear"></div>
+
+			<div class="zipSearch">
+				<input id="textZip" type="text" name="zip" placeholder="enter your zip code" autofocus>
+				<button type="button" class="learnButton">Search</button>
+			</div>
+			<div class="clear"></div>
+
+		</form>
+		<form method="get" id="createPath">
+			<button type="submit" class="learnButton">Update map</button>
+		</form>
+		
+		<div class="clear"></div>
+		<div id="results"></div>
+		<p>A project by Jarred Stein, Tony Martinez, Alfredo Garcia, and AJ Bell</a>.</p>
+	</div>
+	
+	<!-- an empty div for the map -->
+	<div id="map-canvas"></div>
+
+
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+
+  <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key="></script>
+  <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+  <script language="javascript" type="text/javascript" src="js/map2.js"></script>
+  <link rel='stylesheet' type='text/css' href='/resources/tutorial/css/example.css'>
+  </head>
+  <body>
+    <h3>coordinates of tree3 db</h3>
+    <div id='messagesDiv'></div>
+    <div id="map"></div>
+    
+    <script>
+    
+    ///////////////////////
+    //GOOGLE MAPS
+    //////////////////////
+
+    //////////////////////
+    //FIREBASE
+    //////////////////////
+    
+      var myDataRef = new Firebase('https://tree3.firebaseio.com/ARC/');
+      $('#messageInput').keypress(function (e) {
+        if (e.keyCode == 13) {
+          var name = $('#nameInput').val();
+          var text = $('#messageInput').val();
+          
+          myDataRef.push({name: name, text: text});
+          $('#messageInput').val('');
+        }
+      });
+      myDataRef.on('child_added', function(snapshot) {
+        var message = snapshot.val();
+        displayChatMessage(message.Latitude, message.Longitude, message.Status);
+      });
+      function displayChatMessage(lat, lon, status) {
+        if(status == "Empty\r\n" || lat == "NA"){
+          $('<div/>').text("no full garbage cans").appendTo($('#messagesDiv'));
+        }
+        else{
+          $('<div/>').text(lon).prepend($('<em/>').text(lat + ' ').prepend(status)).appendTo($('#messagesDiv'));
+        }
+        $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
+      };
+    </script>
+  </body>
+</html>
