@@ -36,14 +36,7 @@ void setup(){
   pinMode(StateM, OUTPUT);
   digitalWrite(pirPin, LOW);
 
-  //give the sensor some time to calibrate
-//  Serial.print("calibrating sensor... ");
-//    for(int i = 0; i < calibrationTime; i++){
-//      Serial.print(".");
-//      delay(1000);
-//      }
-//    Serial.println(" done");
-//    Serial.println("SENSOR ACTIVE");
+
     delay(50);
   }
 
@@ -64,16 +57,7 @@ void loop(){
       }
        Le = true;
        
-//       digitalWrite(pirPin, HIGH);
-       //Serial.println("Full!");
-//       if(buttonSwitch == HIGH){
-//        digitalWrite(pirPin, LOW);
-//        digitalWrite(ledPin, LOW);
-//       }
-//       if(lockLow){  
-//         //makes sure we wait for a transition to LOW before any further output is made:
-//         lockLow = false;            
-//         //Serial.println("---");
+
 
           Serial.println("Full!");
           flag = false;
@@ -90,22 +74,7 @@ void loop(){
        Le = false;
        Serial.println("Empty");
        Bu = false;
-//       if(takeLowTime){
-//        lowIn = millis();          //save the time of the transition from high to LOW
-//        takeLowTime = false;       //make sure this is only done at the start of a LOW phase
-//        }
-//       //if the sensor is low for more than the given pause, 
-//       //we assume that no more motion is going to happen
-//       if(!lockLow && millis() - lowIn > pause){  
-//           //makes sure this block of code is only executed again after 
-//           //a new motion sequence has been detected
-//           lockLow = true;
-//           
-//           Serial.println("Empty");      //output                      
-//         
-//           
-//           delay(50);
-//           }
+
         flag = true;
        }
   }
