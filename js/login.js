@@ -4,3 +4,8 @@ $(function() {
 		$( ".LoginWrapButton" ).show();
 	});
 });
+//STOP THIS PAGE
+//Hacktoberfest:
+//1
+//2
+//3
