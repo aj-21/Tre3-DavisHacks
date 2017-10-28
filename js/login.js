@@ -5,3 +5,7 @@ $(function() {
 	});
 });
 //STOP THIS PAGE
+//Hacktoberfest:
+//1
+//2
+//3
