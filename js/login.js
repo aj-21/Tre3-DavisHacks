@@ -4,7 +4,7 @@ $(function() {
 		$( ".LoginWrapButton" ).show();
 	});
 });
-//STOP THIS PAGE
+//Happpy Halloween!!
 //Hacktoberfest:
 //1
 //2
